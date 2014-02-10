@@ -1,0 +1,42 @@
+{
+  "name": "generator-laraveled",
+  "version": "0.0.0",
+  "description": "A generator for Yeoman",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "homepage": "https://github.com/dmi3000/generator-laraveled",
+  "bugs": "https://github.com/dmi3000/generator-laraveled/issues",
+  "author": {
+    "name": "Dima Markus",
+    "email": "dmi3000@gmail.com",
+    "url": "https://github.com/dmi3000"
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmi3000/generator-laraveled.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.14.0",
+    "exec-sync": "~0.1.6"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
