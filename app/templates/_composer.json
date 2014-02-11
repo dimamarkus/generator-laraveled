@@ -8,7 +8,7 @@
 		"way/generators": "dev-master"
 	},
 	"require-dev": {
-		"fzaninotto/faker": "dev-master",
+		"fzaninotto/faker": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
