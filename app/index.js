@@ -67,7 +67,12 @@ LaraveledGenerator.prototype.install = function () {
   }
 
   var done = this.async();
-  this.installDependencies({ skipInstall: this.options['skip-install']});
+  this.installDependencies({
+    skipInstall: this.options['skip-install']
+    // callback: function() {
+    //   this.spawnCommand('gulp watch');
+    // }.bind(this)
+  });
   console.log('Please give me a few minutes to get Bower components and install Laravel \n');
   execSync('composer create-project laravel/laravel tempInstall --prefer-dist');
   console.log('Laravel has been installed. \n');
@@ -84,12 +89,15 @@ LaraveledGenerator.prototype.prepFiles = function prepFiles() {
 
   console.log('Im going to try and create asset folders in your laravel folder');
   this.mkdir("public/js");
-  this.mkdir("public/scss");
   this.mkdir("public/css");
   this.mkdir("public/images");
 
-  this.template("scss/app.scss", "public/scss/app.scss");
-  this.template("scss/_settings.scss", "public/scss/_settings.scss");
+  this.mkdir("app/assets/js");
+  this.mkdir("app/assets/images");
+  this.mkdir("app/assets/scss");
+
+  this.template("scss/app.scss", "app/assets/scss/app.scss");
+  this.template("scss/_settings.scss", "app/assets/scss/_settings.scss");
   console.log('Ok.. that went well. \n');
 
   this.template('gitignore', '.gitignore');
@@ -128,5 +136,7 @@ LaraveledGenerator.prototype.createDefaultViews = function createDefaultViews() 
   execSync('rm app/routes.php');
   this.template('app/routes.php', 'app/routes.php')
 };
+
+
 
 
